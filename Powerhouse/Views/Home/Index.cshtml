@@ -1,0 +1,24 @@
+﻿@using Powerhouse.Security
+@{
+    ViewBag.Title = "نظام انگیزشی اداره برق";
+}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">سایت نظام انگیزشی اداره برق</a>
+        </div>
+        <ul class="nav navbar-nav">
+            @if (CurrentUser.IsAuthenticated)
+            {
+                <li>@Html.ActionLink("خروج", "LogOff", "Account")</li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("ورود", "Login", "Account")</li>
+            }
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active">@Html.ActionLink("خانه", "Index", "Home")</li>
+        </ul>
+    </div>
+</nav>
